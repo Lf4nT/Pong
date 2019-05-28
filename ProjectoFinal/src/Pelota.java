@@ -7,17 +7,17 @@ import java.awt.Rectangle;
 
 @SuppressWarnings("unused")
 public class Pelota {
-	private float x;
-	private float y;
-	private float dx;
-	private float dy;
-	private float alto;
-	private float ancho;
-	private Color color;
-	private double vx;
-	private double vy;
-	private int diametro;
-	private Dimension marco;
+	static float x;
+	static float y;
+	static float dx;
+	static float dy;
+	static float alto;
+	static float ancho;
+	static Color color;
+	static double vx;
+	static double vy;
+	static int diametro;
+	static Dimension marco;
 
 	public Pelota(Color color, int radio, float x, float y, float d, float v, Dimension marco) {
 		this.color = color;
@@ -63,5 +63,5 @@ public class Pelota {
 			return false;
 		}
 	}
-	
+
 }

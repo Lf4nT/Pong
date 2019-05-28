@@ -58,13 +58,21 @@ public class Juego<pelota> extends javax.swing.JFrame {
 
 	public void gameOver() {
 		if (golpes == golpes2) {
-			JOptionPane.showMessageDialog(this, "El Jugador 1 Gano", "Game Over", JOptionPane.YES_NO_OPTION);
+			JOptionPane.showMessageDialog(this, "El Jugador 1 Ganó", "Game Over", JOptionPane.YES_NO_OPTION);
 			golpes = 0;
 			golpes2 = 0;
 		} else {
-			JOptionPane.showMessageDialog(this, "El Jugador 2 Gano", "Game Over", JOptionPane.YES_NO_OPTION);
+			JOptionPane.showMessageDialog(this, "El Jugador 2 Ganó", "Game Over", JOptionPane.YES_NO_OPTION);
 			golpes = 0;
 			golpes2 = 0;
+		}
+	}
+
+	public void TocaFondo() {
+		if (Pelota.x == 630) {
+			gameOver();
+		} else if (Pelota.x == 0) {
+			gameOver();
 		}
 	}
 
