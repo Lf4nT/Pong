@@ -15,24 +15,18 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 @SuppressWarnings("unused")
-public class Juego<pelota> extends javax.swing.JFrame {
+public class Juego extends javax.swing.JFrame {
 
 	private JPanel panel;
 	private Pelota pelota;
 	private Raqueta1 raqueta1;
 	private Raqueta2 raqueta2;
-	private int golpes, golpes2, c;
+	private int golpes;
+	private int golpes2;
+	private int c;
 	private JLabel labelcontador;
 	private JLabel fondo;
 	private JLabel labelcontador2;
-
-	public Juego() {
-		pelota = new Pelota(getWidth(), getHeight());
-		raqueta1 = new Raqueta1(getHeight());
-		raqueta2 = new Raqueta2(getHeight());
-		golpes = 0;
-		golpes2 = 0;
-	}
 
 	public void Acciones() {
 		if (Colision()) {
@@ -69,9 +63,9 @@ public class Juego<pelota> extends javax.swing.JFrame {
 	}
 
 	public void TocaFondo() {
-		if (Pelota.x == 630) {
+		if (Pelota.x + (Pelota.diametro / 2) == 629) {
 			gameOver();
-		} else if (Pelota.x == 0) {
+		} else if (Pelota.x + (Pelota.diametro / 2) == 1) {
 			gameOver();
 		}
 	}
