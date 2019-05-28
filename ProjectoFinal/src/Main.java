@@ -6,7 +6,7 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		Lienzo lienzo;
-		JFrame frame = new JFrame("Bing Bang Bong");
+		JFrame frame = new JFrame("Ping Pang Pong");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		lienzo = new Lienzo(630, 450);
 		frame.add(lienzo);

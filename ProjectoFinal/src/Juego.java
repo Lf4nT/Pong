@@ -1,44 +1,20 @@
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 
-@SuppressWarnings("unused")
 public class Juego extends javax.swing.JFrame {
 
-	private JPanel panel;
 	private Pelota pelota;
 	private Raqueta1 raqueta1;
 	private Raqueta2 raqueta2;
 	private int golpes;
 	private int golpes2;
-	private int c;
-	private JLabel labelcontador;
-	private JLabel fondo;
-	private JLabel labelcontador2;
 
 	public void Acciones() {
 		if (Colision()) {
 			golpes = golpes + 1;
-			labelcontador.setText(String.valueOf(golpes / 2));
-		}
-		if (Colision2()) {
+		} else if (Colision2()) {
 			golpes2 = golpes2 + 1;
-			labelcontador2.setText(String.valueOf(golpes2 / 2));
-		}
-		if (pelota.TocaFondo()) {
-			gameOver();
+		} else if (pelota.TocaFondo()) {
+			GameOver();
 		}
 	}
 
@@ -50,7 +26,7 @@ public class Juego extends javax.swing.JFrame {
 		return pelota.limiteBola().intersects(raqueta2.limiteRaqueta2());
 	}
 
-	public void gameOver() {
+	public void GameOver() {
 		if (golpes == golpes2) {
 			JOptionPane.showMessageDialog(this, "El Jugador 1 Ganó", "Game Over", JOptionPane.YES_NO_OPTION);
 			golpes = 0;
@@ -64,10 +40,9 @@ public class Juego extends javax.swing.JFrame {
 
 	public void TocaFondo() {
 		if (Pelota.x + (Pelota.diametro / 2) == 629) {
-			gameOver();
+			GameOver();
 		} else if (Pelota.x + (Pelota.diametro / 2) == 1) {
-			gameOver();
+			GameOver();
 		}
 	}
-
 }
